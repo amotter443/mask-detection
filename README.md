@@ -26,10 +26,9 @@ Usage
 -----------------------
 * Download the data source from [here](https://github.com/prajnasb/observations/tree/master/experiements/data)
 * Prajna's project comes in two sub-folders with and without masks, so merge the two into a singular "Mask Images" folder 
-* Follow the steps listed in mask_algorithm.py (resize to 100x100, divide by 225, convert to greyscale, split into 80-20 train test split using sklearn.model_selection.train_test_split, save each data source as data.npy and target.npy respectively)
-* Follow the steps listed in mask_algorithm.py
-* To save time, save the Tensorflow weights so the model will not need to be trained each time the script is run (~10 minutes)
-* The webcam output gets saved as alex_mask.api. You can change the name if your name is not also Alex :)
+* Follow the steps listed in image_preprocess.py
+* Follow the steps listed in mask_algorithm.py (to save time, the Tensorflow weights can be saved so the model will not need the ~10 minute runtime to be trained each time the script is run)
+* The webcam output is saved as alex_mask.api. You can change the name if your name is not also Alex :)
 
 
 
