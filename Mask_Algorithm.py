@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -14,26 +8,18 @@ from tensorflow.keras.models import load_model
 from sklearn.model_selection import train_test_split
 import cv2
 
+
 #Initialize Data
 data = np.load('/data.npy')
 target=np.load('/target.npy')
-
-
-# In[2]:
 
 
 #Print image with mask on as visual example
 plt.imshow(1-data[1100][:, :, 0], cmap='gray');
 
 
-# In[3]:
-
-
 #Split into train-test sets
 X_train, X_test, y_train, y_test=train_test_split(data,target,test_size=0.1,random_state=100)
-
-
-# In[4]:
 
 
 #Initialize Sequential Model
@@ -50,13 +36,11 @@ model = keras.Sequential([
 ])
 
 
-# In[5]:
-
-
 #Fit Model
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(x=X_train,y=y_train, epochs=20)
 print(model.evaluate(X_test,y_test))
+
 
 #Test Individual predcitions
 image_index = 100
@@ -65,9 +49,8 @@ pred = model.predict(X_test[image_index].reshape(1, 100, 100, 1))
 print(pred.argmax())
 
 
-# In[6]:
 
-
+#Test on webcam using OpenCV
 clsfr=cv2.CascadeClassifier('cv2/data/haarcascade_frontalface_default.xml')
 
 source=cv2.VideoCapture(0)
