@@ -51,7 +51,7 @@ print(pred.argmax())
 
 
 #Test on webcam using OpenCV
-clsfr=cv2.CascadeClassifier('cv2/data/haarcascade_frontalface_default.xml')
+clsfr=cv2.CascadeClassifier('/cv2/data/haarcascade_frontalface_default.xml')
 
 source=cv2.VideoCapture(0)
 labels_dict={0:'No_Mask',1:'Mask'}
@@ -59,7 +59,7 @@ color_dict={0:(0,0,255),1:(0,255,0)}
 
 frame_width = int(source.get(3))
 frame_height = int(source.get(4))
-out = cv2.VideoWriter('alex_mask.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame_width,frame_height))
+out = cv2.VideoWriter('mask_vid.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame_width,frame_height))
 
 while(True):
     ret,img=source.read()
