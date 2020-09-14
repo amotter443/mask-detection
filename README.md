@@ -18,8 +18,8 @@ Usage
 * Download the data source from [here](https://github.com/prajnasb/observations/tree/master/experiements/data) and save folder as "Mask Images" 
 * Follow the steps listed in image_preprocess.py
 * Follow the steps listed in mask_algorithm.py 
-* An optional step in mask_algorithm.py is saving and loading the trained Tensorflow models. By saving the final trained weights, the ~10 minute runtime to compile and fit the model each time the script is run can be eliminated. 
-* The webcam output is saved as mask_vid.api.
+* An optional step in mask_algorithm.py is saving and loading the trained Tensorflow models. By saving the final trained weights, the ~10 minute runtime to compile and fit the model each time the script is run can be eliminated
+* The webcam output is saved as mask_vid.api
 
 
 
