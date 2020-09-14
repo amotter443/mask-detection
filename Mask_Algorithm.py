@@ -41,6 +41,12 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 model.fit(x=X_train,y=y_train, epochs=20)
 print(model.evaluate(X_test,y_test))
 
+#Optional: Save model to prevent running 
+#model.save('/mask_nn.model',overwrite=True,include_optimizer=True,save_format=None,signatures=None,options=None)
+
+#Optional: If model saved, code to load it from Tensorflow rather than running above fitting/compiling section
+#model = load_model('/mask_nn.model')
+
 
 #Test Individual predcitions
 image_index = 100
