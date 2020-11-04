@@ -1,6 +1,7 @@
 import numpy as np
 from keras.utils import np_utils
 import os, sys
+import cv2
 
 #Declare file path 
 data_path='/Mask Images'
